@@ -11,15 +11,13 @@
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
 
-function twoSum(arr, target) {
-  len = arr.length
+function twoSum(nums, target) {
+  const len = nums.length
   for (i = 0; i < len; i++) {
-    if (arr[i] < target) {
-      let summand1 = arr[i]
-      let summand2Index = arr.indexOf(target - summand1, i + 1) // Use fromIndex. Can always look forward since we are moving from left to right. Simply add 1.
-      if (summand2Index != -1) {
-        return [i, summand2Index]
-      }
+    let summand1 = nums[i]
+    let summand2Index = nums.indexOf(target - summand1, i + 1) // Use fromIndex parameter. Can always look forward since we are moving from left to right. Simply add 1.
+    if (summand2Index != -1) {
+      return [i, summand2Index]
     }
   }
 }
